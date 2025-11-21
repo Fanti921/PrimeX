@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PrimeX - Eletrônicos Premium</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500&family=Raleway:wght@600&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">PrimeX</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Produtos</a>
+      <a href="#about">Sobre</a>
+      <a href="#contact">Contato</a>
+    </nav>
+    <div class="header-right">
+      <button id="dark-toggle">Dark Mode</button>
+      <button id="cart-btn">Carrinho (<span id="cart-count">0</span>)</button>
+    </div>
+  </header>
+
+  <!-- BANNER -->
+  <section class="banner" id="home">
+    <div class="banner-top">
+      <p>Bem-vindo à PrimeX – Eletrônicos premium, Apple e gadgets de última geração!</p>
+    </div>
+    <div class="banner-content">
+      <h1>Eletrônicos de Última Geração</h1>
+      <p>Descubra os produtos Apple e gadgets premium na PrimeX</p>
+      <a href="#products" class="btn-primary">Ver Produtos</a>
+    </div>
+  </section>
+
+  <!-- FILTROS -->
+  <section class="filters">
+    <input type="text" id="search" placeholder="Buscar produtos...">
+    <select id="category-filter">
+      <option value="all">Todos</option>
+      <option value="iphone">iPhone</option>
+      <option value="macbook">MacBook</option>
+      <option value="airpods">AirPods</option>
+    </select>
+    <select id="sort">
+      <option value="default">Ordenar</option>
+      <option value="price-asc">Preço Crescente</option>
+      <option value="price-desc">Preço Decrescente</option>
+    </select>
+  </section>
+
+  <!-- PRODUTOS -->
+  <section class="products" id="products">
+    <h2>Produtos em Destaque</h2>
+    <div class="product-list">
+      <!-- iPhone 17 -->
+      <div class="product-card" data-category="iphone" data-price="11.499.00">
+        <div class="product-image">
+          <img src="/imagem/iphone-17-pro.webp" alt="iPhone 17 Pro">
+          <span class="promo">Novo</span>
+          <div class="wishlist" data-name="iPhone 17 Pro"></div>
+        </div>
+        <h3>iPhone 17 Pro</h3>
+        <p>Design inovador para o melhor desempenho e maior duração de bateria.</p>
+        <div class="rating">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <span class="price">R$ 11.499.00</span>
+        <button class="add-to-cart">Adicionar ao Carrinho</button>
+      </div>
+
+      <!-- iPad Pro -->
+      <div class="product-card" data-category="ipad-pro" data-price="12.499.00">
+        <div class="product-image">
+          <img src="/imagem/ipad-pro.webp" alt="iPad Pro">
+          <span class="promo">Novo</span>
+          <div class="wishlist" data-name="iPad Pro"></div>
+        </div>
+        <h3>iPad Pro</h3>
+        <p>A experiência definitiva em iPad com a mais avançada tecnologia.</p>
+        <div class="rating">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <span class="price">R$ 12.499.00</span>
+        <button class="add-to-cart">Adicionar ao Carrinho</button>
+      </div>
+
+      <!-- IPhone 16 -->
+      <div class="product-card" data-category="airpods" data-price="6799.00">
+        <div class="product-image">
+          <img src="/imagem/iphone-16-.webp" alt="iPhone 16">
+          <span class="promo">Novo</span>
+          <div class="wishlist" data-name="iphone 16"></div>
+        </div>
+        <h3>iPhone 16</h3>
+        <p>Seu novo iPhone. Mais pessoal do que nunca.</p>
+        <div class="rating">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <span class="price">R$ 6799.00</span>
+        <button class="add-to-cart">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="about" id="about">
+    <h2>Sobre Nós</h2>
+    <p>Na PrimeX você encontra produtos Apple e eletrônicos premium com atendimento de qualidade. Nosso objetivo é oferecer a melhor experiência de compra online.</p>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="contact" id="contact">
+    <h2>Contato</h2>
+    <form id="contact-form">
+      <input type="text" placeholder="Seu nome" required>
+      <input type="email" placeholder="Seu email" required>
+      <textarea placeholder="Sua mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 PrimeX. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- CARRINHO -->
+  <section id="cart" class="cart">
+    <div class="cart-header">
+      <button id="close-cart">← Voltar</button>
+      <h2>Seu Carrinho</h2>
+    </div>
+    <div id="cart-items"></div>
+    <p class="cart-total">Total: R$ <span id="cart-total">0,00</span></p>
+    <button id="checkout-btn" class="checkout-btn">Finalizar Compra</button>
+  </section>
+
+  <!-- CHECKOUT MODAL -->
+  <div id="checkout-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-checkout">&times;</span>
+      <h2>Finalizar Compra</h2>
+      <form id="checkout-form">
+        <input type="text" placeholder="Nome Completo" required>
+        <input type="text" placeholder="Endereço" required>
+        <input type="text" placeholder="Número do Cartão" required>
+        <input type="text" placeholder="Validade MM/AA" required>
+        <input type="text" placeholder="CVV" required>
+        <button type="submit">Confirmar Compra</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
